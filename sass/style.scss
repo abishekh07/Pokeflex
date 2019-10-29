@@ -1,0 +1,130 @@
+@import './helpers';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+
+  @media (max-width: 1080px) {
+    font-size: 56%;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 50%;
+  }
+}
+
+body {
+  background: #222930;
+  font-family: 'Rubik', sans-serif;
+}
+
+.header {
+  height: 20vh;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__logo {
+    display: block;
+    width: 25rem;
+    height: 8rem;
+    filter: drop-shadow(0 0.4rem 1rem rgba(255, 255, 255, 0.158));
+  }
+}
+
+.pokemon {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  padding: 5rem 0;
+  // max-width: 140rem;
+
+  &__card {
+    display: inline-block;
+    width: 35rem;
+    background: #fff;
+    box-shadow: 0 0.1rem 0.2rem rgba(228, 228, 228, 0.5);
+    border-radius: 1rem;
+    overflow: hidden;
+    margin: 3rem 0;
+    position: relative;
+
+    &--bg {
+      display: block;
+      height: 20rem;
+      clip-path: polygon(100% 0, 100% 50%, 50% 80%, 0 50%, 0 0);
+    }
+
+    &--img {
+      width: 12rem;
+      height: 12rem;
+      border-radius: 50%;
+      z-index: 10;
+      position: absolute;
+      top: 18%;
+      left: calc(50% - 6rem);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.5);
+
+      /*********************************/
+      // display: none;
+      /********************************/
+
+      img {
+        width: 85%;
+        margin: auto;
+      }
+    }
+
+    &--info {
+      text-align: center;
+      padding: 2rem 0;
+
+      h2 {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin: 1.5rem 0;
+      }
+    }
+  }
+
+  &__stats {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.6rem;
+
+    &--item {
+      list-style: none;
+      margin-top: 3rem;
+      font-weight: 700;
+      color: #666e66;
+    }
+  }
+
+  &__attacks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 3rem 0 0;
+
+    &--item {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin-top: 1rem;
+
+      &-text {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
